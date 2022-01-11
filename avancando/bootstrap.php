@@ -10,5 +10,11 @@ require_once('autoload.php');
 
 
 echo '<pre>';
-print_r((new \Rafael\DB\Db)->conect());
-print_r((new \Rafael\DB\MySql)->conect());
+// print_r((new \Rafael\DB\Db)->conect());
+// print_r((new \Rafael\DB\MySql)->conect());
+try{
+    (new Rafael\Db\ORM)->select(false);
+}catch (Rafael\MyException $e) {
+    echo $e->getMessage();
+}
+

@@ -1,6 +1,6 @@
 <?php
 
-namespace Rafael\db;
+namespace Rafael\Db;
 
 class Db
 {
