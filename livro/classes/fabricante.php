@@ -1,6 +1,6 @@
 <?php
 
-class fabricante
+class Fabricante
 {
     private $nome;
     private $endereço;
@@ -16,5 +16,15 @@ class fabricante
     public function getNome()
     {
         return $this->nome;
+    }
+
+    public function getEndereco()
+    {
+        return $this->endereço;
+    }
+
+    public function getDocumento()
+    {
+        return $this->documento;
     }
 }

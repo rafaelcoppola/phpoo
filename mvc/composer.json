@@ -3,7 +3,7 @@
     "autoload": {
         "psr-4": {
             "SON\\": "src",
-            "APP\\": "app"
+            "App\\": "app"
         }
     }
 }

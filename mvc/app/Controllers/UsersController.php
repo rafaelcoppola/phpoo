@@ -2,10 +2,8 @@
 
 namespace App\Controllers;
 
-class UsersController
+use SON\Controller;
+class UsersController extends Controller
 {
-    public function handler()
-    {
-        return self::class;
-    }
+   
 }

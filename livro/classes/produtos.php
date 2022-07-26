@@ -1,11 +1,12 @@
 <?php
 
-class produtos
+class Produtos
 {
     private $descricao;
     private $estoque;
     private $preco;
     private $fabricante;
+    private $caracteristicas;
 
     public function __construct($descricao, $estoque, $preco)
     {
@@ -19,7 +20,7 @@ class produtos
         return $this->descricao;
     }
 
-    public function setFabricante(fabricante $f)
+    public function setFabricante(Fabricante $f)
     {
         $this->fabricante = $f;
     }
@@ -27,5 +28,15 @@ class produtos
     public function getFabricante()
     {
         return $this->fabricante;
+    }
+
+    public function addCaracteristicas($nome, $valor)
+    {
+        $this->caracteristicas[]= new  Caracteristicas($nome, $valor);
+    }
+
+    public function getCaracteristicas()
+    {
+        return $this->caracteristicas;
     }
 }

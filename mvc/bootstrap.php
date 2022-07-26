@@ -1,9 +1,10 @@
 <?php
 
-require_once('vendor/autoload.php');
+require __DIR__ . '/vendor/autoload.php';
+$router = require __DIR__ . '/router.php';
 
-// $controller = new SON\Controller;
-$controller1 = new App\Controllers\UsersController;
+$object = $router->handler();
 
-// echo $controller->handler();
-echo $controller1->handler();
+$controller = new $object['class'];
+$action = $object['action'];
+echo $controller->$action();
