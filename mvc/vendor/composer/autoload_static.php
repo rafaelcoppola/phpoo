@@ -13,7 +13,7 @@ class ComposerStaticInit2e5241e8f9e12964c895b5012bde4406
         ),
         'A' => 
         array (
-            'APP\\' => 4,
+            'App\\' => 4,
         ),
     );
 
@@ -22,7 +22,7 @@ class ComposerStaticInit2e5241e8f9e12964c895b5012bde4406
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
-        'APP\\' => 
+        'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),

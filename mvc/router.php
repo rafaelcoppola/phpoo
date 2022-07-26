@@ -7,4 +7,9 @@ $router['/'] = [
     'action' => 'index'
 ];
 
+$router['/create'] = [
+    'class' => App\Controllers\UsersController::class,
+    'action' => 'create'
+];
+
 return $router;
