@@ -3,12 +3,15 @@
 namespace App\Controllers;
 
 use SON\Controller;
+use App\Models\User;
 
 class UsersController extends Controller
 {
-    public function index()
+    
+    public function index(User $model)
     {
-        $this->render(['nome' => "rafael"]);
+        $user = $model->get();
+        $this->render($user);
     }
 
     public function create()
