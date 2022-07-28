@@ -6,11 +6,11 @@ class Model
 {
     private $pdo;
 
-    private function __construct(\PDO $pdo)
+    public function __construct(\PDO $pdo = null)
     {
         $this->pdo = $pdo;
     }
-    
+
     public function get()
     {
         return array(

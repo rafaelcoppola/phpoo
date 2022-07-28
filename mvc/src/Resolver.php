@@ -2,8 +2,10 @@
 
 namespace SON;
 
-class Resolver
+class Resolver implements \ArrayAccess
 {
+    use Collection;
+
     public function handler(string $class, string $method = null)
     {
         $ref = new \ReflectionClass($class);
@@ -35,8 +37,18 @@ class Resolver
         $parameters = [];
 
         foreach ($method->getParameters() as $param) {
+
+            if ($param->getType() !== null && $this->offsetExists((string)$param->getType())) {
+                $parameters[] = $this->offsetGet((string)$param->getType());
+                continue;
+            }
             if ($param->getClass()) {
                 $parameters[] = $this->handler($param->getClass()->getName());
+                continue;
+            }
+
+            if ($param->isOptional()) {
+                $parameters[] = $param->getDefaultValue();
                 continue;
             }
         }
